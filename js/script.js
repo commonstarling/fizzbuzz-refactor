@@ -1,4 +1,6 @@
 //function to submit number from form
+var x = (+".number");
+
 $(document).on('keypress', function(key) {
         if (key.keyCode == 13) {
             checkNumber();
@@ -11,18 +13,18 @@ function resetForm() {
 }
 //function to check for valid number
 function checkNumber() {
-	if (+".number" === NaN) {
+	if (x === NaN) {
 		alert('Please type a valid integer.');
 	}
 	else {
-		fizzBuzz(+'.number');
+		fizzBuzz(x);
 	}	
 }
 //function to run FizzBuzz
-function fizzBuzz() {		
+function fizzBuzz(x) {		
 	var counter = 1;
 	var results = "";
-	while (counter <= +'.number') {		
+	while (counter <= x) {		
 		if (counter % 3 === 0 && counter % 5 === 0) {
 			results = "FizzBuzz<br>";
 		}
