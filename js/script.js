@@ -1,9 +1,8 @@
-//function to submit number from form
-var x = (+".number");
-
 $(document).on('keypress', function(key) {
         if (key.keyCode == 13) {
-            checkNumber();
+        	var numberChecked = $('.number').val();
+        	var checkNumberInt = parseInt(numberChecked);
+        	checkNumber(checkNumberInt);
             resetForm();
         }
 });
@@ -12,8 +11,8 @@ function resetForm() {
 	$('.number').val('');
 }
 //function to check for valid number
-function checkNumber() {
-	if (x === NaN) {
+function checkNumber(x) {
+	if (typeof x !== 'number') {
 		alert('Please type a valid integer.');
 	}
 	else {
